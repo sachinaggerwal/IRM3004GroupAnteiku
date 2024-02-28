@@ -11,7 +11,7 @@ def contact(request):
     return render(request, 'culinaryCorner/about.html')
 
 def faq(request):
-    return render(request, 'culinaryCorner/about.html')
+    return render(request, 'culinaryCorner/faq.html')
 
 def orders(request):
-    return render(request, 'culinaryCorner/about.html')
+    return render(request, 'culinaryCorner/orders.html')
