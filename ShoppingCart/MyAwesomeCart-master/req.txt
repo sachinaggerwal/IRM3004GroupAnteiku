@@ -1,0 +1,26 @@
+pip install asgiref==3.7.2
+pip install attrs==23.2.0
+pip install bleach==3.3.0
+pip install dj-database-url==0.3.0
+pip install dj-static==0.0.6
+pip install Django==3.1.12
+pip install django-crispy-forms==1.9.0
+pip install gunicorn==20.0.4
+pip install more-itertools==10.2.0
+pip install packaging==23.2
+pip install Pillow==8.2.0
+pip install pluggy==0.13.1
+pip install py==1.11.0
+pip install pycryptodome==3.20.0
+pip install pytest==5.4.1
+pip install pytest-django==3.9.0
+pip install python-decouple==3.0
+pip install python-dotenv==0.12.0
+pip install pytz==2024.1
+pip install six==1.14.0
+pip install sqlparse==0.4.4
+pip install static3==0.7.0
+pip install Unipath==1.0
+pip install wcwidth==0.2.13
+pip install webencodings==0.5.1
+pip install whitenoise==5.0.1pip install 
