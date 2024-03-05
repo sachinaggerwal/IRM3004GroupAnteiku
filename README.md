@@ -34,7 +34,6 @@
 	-Certain webpages for certain regions were canceled and merged with other regions due to multiple reasons. Some of these include, not having enough content to be a stand-alone and being very similar to other regions.
 
 <h2>Product Goal:</h2>
---------------------------------------------------------------
 By the end of developing our website, CulinaryCorners aims to have a one stop shop for a culinary experience, providing a diverse range of cuisines, convenient pre made meals and fresh/authentic ingredients for home cooking.
 
 CulinaryCorners aims to enhance our user interface through regular menu updates, offering a range of new cuisines for users such as food enthusiasts, work professionals and home cooks.
