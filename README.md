@@ -10,6 +10,12 @@
 @@ text in purple (and bold)@@
 ```
 
+$${\color{red}Red}$$
+$${\color{lightgreen}Light \space Green}$$
+$${\color{blue}Blue}$$
+$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
+
+
 <h2 style="color: #3498db;">Team name: Team Anteiku</h2>
 <h2 style="color : #FFD95A;">Team number: Team 5</h2>
 
