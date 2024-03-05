@@ -12,6 +12,9 @@ A description of your application
 Screenshots:
 
 ![ScreenShot](https://github.com/sachinaggerwal/IRM3004GroupAnteiku/tree/main/ShoppingCart/MyAwesomeCart-master/shop/static/shop/Logo.jpeg)
+<p>
+    <img src="https://github.com/sachinaggerwal/IRM3004GroupAnteiku/tree/main/ShoppingCart/MyAwesomeCart-master/shop/static/shop/Logo.jpeg">
+</p>
 
 Completed features
 	-We have managed to successfully integrate a working shopping cart system. This allows you to add items to your shopping cart. There is also a functional counter that alerts you and lets you know how many items have been added. Clicking on the shopping cart also takes you to a page with all selected items ready to be bought.
