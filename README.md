@@ -2,7 +2,7 @@
 
 # TEAM ANTEIKU README FILE
 
-<h2>Team name: Team Anteiku</h2>
+<h2 style="color: #3498db;">Team name: Team Anteiku</h2>
 <h2>Team number: Team 5</h2>
 
 <h2>A description of your application</h2>
