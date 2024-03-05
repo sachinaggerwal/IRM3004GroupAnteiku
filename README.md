@@ -11,7 +11,9 @@ A description of your application
 
 Screenshots:
 
-![ScreenShot](readme_screenshot1.png)
+![ScreenShot](C:\Users\sachi\OneDrive\Desktop\culinary_corner\IRM3004GroupAnteiku\ShoppingCart\MyAwesomeCart-master\shop\static\shop\readme_screenshot1.png)
+
+![ScreenShot](C:\Users\sachi\OneDrive\Desktop\culinary_corner\IRM3004GroupAnteiku\ShoppingCart\MyAwesomeCart-master\shop\static\shop\readme_screenshot2.png)
 <p>
     <img src="readme_screenshot1.png">
 </p>
