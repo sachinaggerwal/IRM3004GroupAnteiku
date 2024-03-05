@@ -9,13 +9,10 @@ A description of your application
 
 -CulinaryCorners is a leading-edge online marketplace that provides a wide range of pre-made meals from all corners of the globe. With the help of our website, users can easily access real recipes, ingredients, and meal-kits and start cooking from the comfort of their own homes. CulinaryCorners delivers international cuisines right to your door with carefully chosen ingredients and simple-to-follow instructions, making cooking an engaging and pleasurable experience for foodies of all abilities.
 
-Screenshots:
-
-![ScreenShot](C:\Users\sachi\OneDrive\Desktop\culinary_corner\IRM3004GroupAnteiku\ShoppingCart\MyAwesomeCart-master\shop\static\shop\readme_screenshot1.png)
-
-![ScreenShot](C:\Users\sachi\OneDrive\Desktop\culinary_corner\IRM3004GroupAnteiku\ShoppingCart\MyAwesomeCart-master\shop\static\shop\readme_screenshot2.png)
+<h2>Screenshots:</h2>
 <p>
-    <img src="readme_screenshot1.png">
+    <img src="culinary_corner/shop/static/shop/readme_screenshot1.png">
+	<img src="culinary_corner/shop/static/shop/readme_screenshot2.png">
 </p>
 
 Completed features
