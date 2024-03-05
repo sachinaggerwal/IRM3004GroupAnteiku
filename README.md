@@ -2,8 +2,16 @@
 
 # TEAM ANTEIKU README FILE
 
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
+
 <h2 style="color: #3498db;">Team name: Team Anteiku</h2>
-<h2 style="color : FFD95A;">Team number: Team 5</h2>
+<h2 style="color : #FFD95A;">Team number: Team 5</h2>
 
 <h2 style="color : #C07F00;">A description of your application</h2>
 
