@@ -10,10 +10,10 @@
 @@ text in purple (and bold)@@
 ```
 
-$${\color{red}Red}$$
-$${\color{lightgreen}Light \space Green}$$
-$${\color{blue}Blue}$$
-$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
+<p>$${\color{red}Red}$$</p>
+<p>$${\color{lightgreen}Light \space Green}$$</p>
+<p>$${\color{blue}Blue}$$</p>
+<p>$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$</p>
 
 
 <h2 style="color: #3498db;">Team name: Team Anteiku</h2>
