@@ -16,8 +16,8 @@
 <p>$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$</p> -->
 
 
-<h2>$${\color{yellow}Team name:}$$ Team Anteiku</h2>
-<h2>$${\color{yellow}Team number:}$$ Team 5</h2>
+<h2>Team name: Team Anteiku</h2>
+<h2>Team number: Team 5</h2>
 
 <h2>A description of your application</h2>
 
