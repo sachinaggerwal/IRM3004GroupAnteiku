@@ -1,7 +1,13 @@
+'''
+creating all database models.
+'''
 from django.db import models
 
 # Create your models here.
 class Product(models.Model):
+    '''
+    creating the product class
+    '''
     product_id = models.AutoField
     product_name = models.CharField(max_length=50)
     category = models.CharField(max_length=50, default="")
@@ -12,10 +18,13 @@ class Product(models.Model):
     image = models.ImageField(upload_to='shop/images', default="")
 
     def __str__(self):
-        return self.product_name
+        return str(self.product_name)
 
 
 class Contact(models.Model):
+    '''
+    creating the contact class
+    '''
     msg_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=70, default="")
@@ -24,9 +33,12 @@ class Contact(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 class Orders(models.Model):
+    '''
+    creating the orders class
+    '''
     order_id = models.AutoField(primary_key=True)
     items_json = models.CharField(max_length=5000)
     amount = models.IntegerField( default=0)
@@ -39,11 +51,13 @@ class Orders(models.Model):
     phone = models.CharField(max_length=111, default="")
 
 class OrderUpdate(models.Model):
+    '''
+    creating the OrderUpdates class
+    '''
     update_id  = models.AutoField(primary_key=True)
     order_id = models.IntegerField(default="")
     update_desc = models.CharField(max_length=5000)
     timestamp = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.update_desc[0:7] + "..."
-
+        return str(self.update_desc)[0:7] + "..."

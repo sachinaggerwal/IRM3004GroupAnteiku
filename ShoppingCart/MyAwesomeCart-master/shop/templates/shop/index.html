@@ -1,5 +1,5 @@
 {% extends 'shop/basic.html' %}
-{% block title%} Culinary Corner - Gourmet at your fingertips{% endblock %}
+{% block title%} Culinary Corner{% endblock %}
 {% block css %}
 .col-md-3
 {
@@ -43,7 +43,7 @@ padding-right: 0;
 {% load static %}
 <div class="container">
     <!--Slideshow starts here -->
-    {% for product, range, nSlides in allProds %}
+    {% for product, range, nSlides in all_prods %}
     <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
     <div class="row">
         <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">

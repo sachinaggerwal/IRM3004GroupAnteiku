@@ -1,56 +1,80 @@
+'''
+creating different views
+'''
+# pylint: disable=class-has-no-member
 from django.shortcuts import render
-from .models import Product, Contact, Orders, OrderUpdate
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from math import ceil
 import json
-from django.views.decorators.csrf import csrf_exempt
 from PayTm import Checksum
 # Create your views here.
-from django.http import HttpResponse
+from .models import Product, Contact, Orders, OrderUpdate
 MERCHANT_KEY = 'Your-Merchant-Key-Here'
 
 def index(request):
-    allProds = []
+    '''
+    function for rendering the homepage
+    '''
+    all_prods = []
     catprods = Product.objects.values('category', 'id')
     cats = {item['category'] for item in catprods}
     for cat in cats:
         prod = Product.objects.filter(category=cat)
         n = len(prod)
-        nSlides = n // 4 + ceil((n / 4) - (n // 4))
-        allProds.append([prod, range(1, nSlides), nSlides])
-    params = {'allProds':allProds}
+        n_slides = n // 4 + ceil((n / 4) - (n // 4))
+        all_prods.append([prod, range(1, n_slides), n_slides])
+    params = {'all_prods':all_prods}
     return render(request, 'shop/index.html', params)
 
-def searchMatch(query, item):
+def search_match(query, item):
     '''return true only if query matches the item'''
-    if query in item.desc.lower() or query in item.product_name.lower() or query in item.category.lower():
+    if query in item.desc.lower() \
+    or query in item.product_name.lower()\
+    or query in item.category.lower():
         return True
     else:
         return False
 
 def search(request):
+    '''
+    creating search request
+    '''
     query = request.GET.get('search')
-    allProds = []
+    all_prods = []
     catprods = Product.objects.values('category', 'id')
     cats = {item['category'] for item in catprods}
     for cat in cats:
         prodtemp = Product.objects.filter(category=cat)
-        prod = [item for item in prodtemp if searchMatch(query, item)]
+        prod = [item for item in prodtemp if search_match(query, item)]
 
         n = len(prod)
-        nSlides = n // 4 + ceil((n / 4) - (n // 4))
+        n_slides = n // 4 + ceil((n / 4) - (n // 4))
         if len(prod) != 0:
-            allProds.append([prod, range(1, nSlides), nSlides])
-    params = {'allProds': allProds, "msg": ""}
-    if len(allProds) == 0 or len(query)<4:
+            all_prods.append([prod, range(1, n_slides), n_slides])
+    params = {'all_prods': all_prods, "msg": ""}
+    if len(all_prods) == 0 or len(query)<4:
         params = {'msg': "Please make sure to enter relevant search query"}
     return render(request, 'shop/search.html', params)
 
 
 def about(request):
+    '''
+    method for viewing the faq page
+    '''
     return render(request, 'shop/about.html')
+
+def faq(request):
+    '''
+    method for viewing the faq page
+    '''
+    return render(request, 'shop/FAQ.html')
 
 
 def contact(request):
+    '''
+    method for contact us post
+    '''
     thank = False
     if request.method=="POST":
         name = request.POST.get('name', '')
@@ -64,34 +88,43 @@ def contact(request):
 
 
 def tracker(request):
+    '''
+    method to track users orders
+    '''
     if request.method=="POST":
-        orderId = request.POST.get('orderId', '')
+        order_id = request.POST.get('order_id', '')
         email = request.POST.get('email', '')
         try:
-            order = Orders.objects.filter(order_id=orderId, email=email)
+            order = Orders.objects.filter(order_id=order_id, email=email)
             if len(order)>0:
-                update = OrderUpdate.objects.filter(order_id=orderId)
+                update = OrderUpdate.objects.filter(order_id=order_id)
                 updates = []
                 for item in update:
                     updates.append({'text': item.update_desc, 'time': item.timestamp})
-                    response = json.dumps({"status":"success", "updates": updates, "itemsJson": order[0].items_json}, default=str)
+                    response = json.dumps({"status":"success",\
+                    "updates": updates,\
+                    "itemsJson": order[0].items_json}, default=str)
                 return HttpResponse(response)
             else:
                 return HttpResponse('{"status":"noitem"}')
         except Exception as e:
-            return HttpResponse('{"status":"error"}')
+            return HttpResponse(f'{"status":"error-{e}"}')
 
     return render(request, 'shop/tracker.html')
 
 
-def productView(request, myid):
-
-    # Fetch the product using the id
+def product_view(request, myid):
+    '''
+    Fetching the product using the id
+    '''
     product = Product.objects.filter(id=myid)
     return render(request, 'shop/prodView.html', {'product':product[0]})
 
 
 def checkout(request):
+    '''
+    brings users to the checkout page
+    '''
     if request.method=="POST":
         items_json = request.POST.get('itemsJson', '')
         name = request.POST.get('name', '')
@@ -107,8 +140,8 @@ def checkout(request):
         order.save()
         update = OrderUpdate(order_id=order.order_id, update_desc="The order has been placed")
         update.save()
-        thank = True
-        id = order.order_id
+        #thank = True
+        #id = order.order_id
         # return render(request, 'shop/checkout.html', {'thank':thank, 'id': id})
         # Request paytm to transfer the amount to your account after payment by user
         param_dict = {
@@ -131,7 +164,9 @@ def checkout(request):
 
 @csrf_exempt
 def handlerequest(request):
-    # paytm will send you post request here
+    '''
+    paytm will send you post request here
+    '''
     form = request.POST
     response_dict = {}
     for i in form.keys():

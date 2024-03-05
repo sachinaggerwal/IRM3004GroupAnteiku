@@ -1,3 +1,7 @@
+'''
+registering the models. 
+Product, contact, orders, orderUpdate.
+'''
 from django.contrib import admin
 
 # Register your models here.
