@@ -11,9 +11,9 @@ A description of your application
 
 Screenshots:
 
-![ScreenShot](https://github.com/sachinaggerwal/IRM3004GroupAnteiku/tree/main/ShoppingCart/MyAwesomeCart-master/shop/static/shop/Logo.jpeg)
+![ScreenShot](readme_screenshot1.png)
 <p>
-    <img src="https://github.com/sachinaggerwal/IRM3004GroupAnteiku/tree/main/ShoppingCart/MyAwesomeCart-master/shop/static/shop/Logo.jpeg">
+    <img src="readme_screenshot1.png">
 </p>
 
 Completed features
