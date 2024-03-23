@@ -5,6 +5,7 @@ from django.test import TestCase
 from .apps import ShopConfig
 from .models import Product,Contact,Orders,OrderUpdate
 from datetime import date
+from django.urls import reverse
 # Create your tests here.
 class ShopConfigTest(TestCase):
     def test_app_name(self):
@@ -73,3 +74,11 @@ class OrderUpdateModelTest(TestCase):
         orderUpdate = OrderUpdate.objects.get(order_id = 1)
         field_label = orderUpdate._meta.get_field('update_desc').verbose_name
         self.assertEquals(field_label, 'update desc')
+
+class TestViews(TestCase):
+    def setUp(self):
+        pass
+
+    def test_index_view(self):
+        response = self.client.get(reverse('ShopHome'))
+        self.assertEqual(response.status_code,200)
