@@ -6,6 +6,7 @@ from .apps import ShopConfig
 from .models import Product,Contact,Orders,OrderUpdate
 from datetime import date
 from django.urls import reverse
+from django.conf import settings
 # Create your tests here.
 class ShopConfigTest(TestCase):
     def test_app_name(self):
@@ -82,3 +83,57 @@ class TestViews(TestCase):
     def test_index_view(self):
         response = self.client.get(reverse('ShopHome'))
         self.assertEqual(response.status_code,200)
+
+    def test_search_view(self):
+        response = self.client.get(reverse('Search'))
+        self.assertEqual(response.status_code,200)
+    
+    def test_about_view(self):
+        response = self.client.get(reverse('AboutUs'))
+        self.assertEqual(response.status_code,200)
+
+    def test_faq_view(self):
+        response = self.client.get(reverse('faq'))
+        self.assertEqual(response.status_code,200)
+    
+    def test_contact_view_get(self):
+        response = self.client.get(reverse('ContactUs'))
+        self.assertEqual(response.status_code,200)
+    
+    def test_contact_view_post(self):
+        response = self.client.post(reverse('ContactUs'),
+                                    {
+                                        'name' : 'John Doe',
+                                        'email' : 'john@example.com',
+                                        'phone' : '1234567890',
+                                        'desc' : 'this is a test message'
+                                    }
+                                    )
+        self.assertEqual(response.status_code,200)
+    
+    def test_tracker_view_get(self):
+        response = self.client.get(reverse('TrackingStatus'))
+        self.assertEqual(response.status_code,200)
+
+    def test_tracker_view_post(self):
+        response = self.client.post(reverse('TrackingStatus'),
+                                    {
+                                        'order_id' : '123',
+                                        'email' : 'john@example.com'
+                                    }
+                                    )
+        self.assertEqual(response.status_code,200)
+    
+    def test_checkout_view_get(self):
+        response = self.client.get(reverse('Checkout'))
+        self.assertEqual(response.status_code,200)
+
+class SettingsTest(TestCase):
+    def test_secret_key_set(self):
+        self.assertTrue(settings.SECRET_KEY)
+    
+    def test_allowed_hosts_set(self):
+        self.assertTrue(settings.ALLOWED_HOSTS)
+    
+    def test_installed_apps(self):
+        self.assertIn('shop.apps.ShopConfig',settings.INSTALLED_APPS)
