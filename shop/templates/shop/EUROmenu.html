@@ -1,0 +1,342 @@
+{% extends 'shop/basic.html' %}
+{% block title%} Culinary Corner{% endblock %}
+
+{% block css %}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f6e4; /* Light yellowish background */
+    }
+
+    header {
+      background-color: #f7d794; /* Soft orange for the header */
+      color: #333; /* Dark gray text for the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+    }
+
+    nav {
+      background-color: #f7d794; /* Soft orange for the navigation bar */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5em;
+    }
+
+    nav a {
+      color: #333; /* Dark gray text for navigation links */
+      text-decoration: none;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f1c40f; /* A slightly darker orange on hover */
+    }
+
+    img.logo {
+      max-width: 80px; /* Set the logo width to 80px */
+      height: auto;
+      border-radius: 50%; /* Add rounded corners to the logo */
+    }
+
+    .top-right-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0.5em;
+    }
+
+    .top-right-buttons img {
+      max-width: 30px; /* Adjust the width as needed */
+      height: auto;
+      margin-left: 1em;
+      cursor: pointer;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .menu-button {
+      width: 150px; /* Fixed width for the buttons */
+      background-color: #f7d794; /* Soft orange for menu buttons */
+      color: #333; /* Dark gray text for menu buttons */
+      padding: 10px;
+      border-radius: 10px; /* Add rounded corners to menu buttons */
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .menu-button:hover {
+      background-color: #f1c40f; /* A slightly darker orange on hover */
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f7d794; /* Soft orange for menu containers */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    
+
+    .menu-item {
+  display: flex;
+  align-items: flex-start; /* Align items to the start (left side) */
+  margin-bottom: 20px;
+}
+
+
+    .menu-item img {
+      max-width: 200px; /* Adjust the width as needed */
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px; /* Add rounded corners to menu item images */
+    }
+
+    
+
+    .menu-item-info {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .item-price {
+
+  bottom: 10px;
+  right: 10px;
+  background-color: #f7d794; /* Background color for the price display */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .quantity-controls button {
+      background-color: #f1c40f; /* A slightly darker orange for quantity controls */
+      color: #333; /* Dark gray text for quantity controls */
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .quantity-display {
+      font-size: 18px;
+      margin: 0 10px;
+    }
+    {% endblock %}
+
+    {% block body %}
+    {% load static %}
+<body>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="schnitzel_schpaetzel.jpg" alt="Schnitzel">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Schnitzel and Spaetzle</h3>
+        <p>
+          Indulge in a taste of traditional Austrian cuisine with our Schnitzel and Spaetzle. 
+          Tender slices of veal or pork, coated in crispy golden breadcrumbs, are served alongside
+           soft and delicate homemade spaetzle. The schnitzel boasts a satisfying crunch with every bite,
+            while the spaetzle provides a comforting base, perfect for soaking up the savory flavors.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+      </div>
+        <!-- Price display -->
+        <div class="item-price">$24.00</div></div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="spaghetti_carbonara.jpg" alt="Spaghetti Carbonara">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Spaghetti Carbonara</h3>
+        <p>
+          a beloved classic of Italian cuisine, tantalizes the taste buds with its rich and creamy sauce. 
+          Made with al dente spaghetti noodles tossed in a velvety sauce of eggs, Pecorino Romano or Parmigiano-Reggiano
+           cheese, and crispy pancetta or guanciale, every bite is a symphony of flavors and textures. Enhanced with a generous
+            sprinkling of freshly cracked black pepper, this dish promises a satisfying culinary experience that transports you 
+            to the bustling trattorias of Rome.    
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+    <div class="item-price">$19.00</div></div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="fish_chips.jpeg" alt="Fish n Chips">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Fish n Chips</h3>
+        <p>
+            Experience the British seaside classic with our Fish and Chips. Crispy battered fish, tender on the inside, 
+            is paired with golden, perfectly cooked chips. Served with a side of tangy tartar sauce and a wedge of lemon, 
+            this dish brings the beloved flavors of a traditional British pub to your plate.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$18.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="Sauerbraten.jpg" alt="Sauerbraten">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Sauerbraten</h3>
+        <p>
+          A German pot roast that is marinated in a mixture of vinegar, water, 
+          spices (like cloves, peppercorns, and bay leaves), and sometimes wine, 
+          before being slow-cooked until tender. It's typically served with potato 
+          dumplings or mashed potatoes and red cabbage.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$22.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="Coq_au_Vin.jpg" alt="Coq au Vin">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Coq au Vin</h3>
+        <p>
+          Coq au Vin, a traditional French delicacy, showcases tender chicken braised in a rich 
+          wine sauce with lardons, mushrooms, onions, and garlic. Each bite is a delightful blend 
+          of flavors, evoking the warmth and comfort of French countryside cooking.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$26.00</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="paella.jpg" alt="Paella">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Paella</h3>
+        <p>
+          Paella, a renowned Spanish dish hailing from Valencia, features saffron-infused rice 
+          cooked with an array of ingredients such as chicken, rabbit, seafood, and a medley of 
+          vegetables like tomatoes, peas, and peppers. Its vibrant flavors and aromatic blend evoke
+           the essence of Spanish culinary tradition.
+
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$20.00</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="swedish meatballs.jpg" alt="Swedish Meatballs">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Swedish Meatballs</h3>
+        <p>
+          Swedish meatballs are small, seasoned meatballs made from a mixture of
+           ground beef and pork, mixed with breadcrumbs, egg, and various spices like allspice 
+           and nutmeg. They are typically served with creamy gravy and lingonberry jam, and often accompanied 
+           by mashed potatoes or lingonberry sauce.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$16.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more menu containers as needed -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const quantityDisplays = document.querySelectorAll('.quantity-display');
+      const plusBtns = document.querySelectorAll('.plus-btn');
+      const minusBtns = document.querySelectorAll('.minus-btn');
+
+      // Function to update quantity display
+      function updateQuantityDisplay(index, value) {
+        quantityDisplays[index].textContent = value;
+      }
+
+      // Event listeners for plus buttons
+      plusBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          const currentQuantity = parseInt(quantityDisplays[index].textContent);
+          updateQuantityDisplay(index, currentQuantity + 1);
+        });
+      });
+            // Event listeners for minus buttons
+            minusBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          const currentQuantity = parseInt(quantityDisplays[index].textContent);
+          if (currentQuantity > 0) {
+            updateQuantityDisplay(index, currentQuantity - 1);
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+{% endblock %}
