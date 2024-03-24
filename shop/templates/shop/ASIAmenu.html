@@ -1,0 +1,332 @@
+{% extends 'shop/basic.html' %}
+{% block title%} Culinary Corner{% endblock %}
+
+{% block css %}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f6e4; /* Light yellowish background */
+    }
+
+    header {
+      background-color: #f7d794; /* Soft orange for the header */
+      color: #333; /* Dark gray text for the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+    }
+
+    nav {
+      background-color: #f7d794; /* Soft orange for the navigation bar */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5em;
+    }
+
+    nav a {
+      color: #333; /* Dark gray text for navigation links */
+      text-decoration: none;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f1c40f; /* A slightly darker orange on hover */
+    }
+
+    img.logo {
+      max-width: 80px; /* Set the logo width to 80px */
+      height: auto;
+      border-radius: 50%; /* Add rounded corners to the logo */
+    }
+
+    .top-right-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0.5em;
+    }
+
+    .top-right-buttons img {
+      max-width: 30px; /* Adjust the width as needed */
+      height: auto;
+      margin-left: 1em;
+      cursor: pointer;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .menu-button {
+      width: 150px; /* Fixed width for the buttons */
+      background-color: #f7d794; /* Soft orange for menu buttons */
+      color: #333; /* Dark gray text for menu buttons */
+      padding: 10px;
+      border-radius: 10px; /* Add rounded corners to menu buttons */
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .menu-button:hover {
+      background-color: #f1c40f; /* A slightly darker orange on hover */
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f7d794; /* Soft orange for menu containers */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-item {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .menu-item img {
+      max-width: 200px; /* Adjust the width as needed */
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px; /* Add rounded corners to menu item images */
+    }
+
+    .menu-item-info {
+      flex-grow: 1;
+    }
+
+    .item-price {
+
+bottom: 10px;
+right: 10px;
+background-color: #f7d794; /* Background color for the price display */
+padding: 5px 10px;
+border-radius: 5px;
+font-weight: bold;
+}
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .quantity-controls button {
+      background-color: #f1c40f; /* A slightly darker orange for quantity controls */
+      color: #333; /* Dark gray text for quantity controls */
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .quantity-display {
+      font-size: 18px;
+      margin: 0 10px;
+    }
+    {% endblock %}
+
+    {% block body %}
+    {% load static %}
+<body>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="sushi.jpg" alt="sushiPlatter_img">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Sushi Platter</h3>
+        <p> A selection of fresh sushi rolls and nigiri, featuring 
+          ingredients like tuna, salmon, shrimp, avocado, and cucumber, 
+          served alongside pickled ginger, wasabi, and soy sauce. Sushi is 
+          a staple of Japanese cuisine, celebrated for its artful presentation 
+          and delicate flavors.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$23.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="Ind_ButterChicken.jpg" alt="butterChickenImg">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Butter Chicken</h3>
+        <p>Tender pieces of chicken cooked in a creamy tomato-based 
+          sauce infused with aromatic spices like garam masala, cumin, and coriander, 
+          finished with a touch of butter and cream. Butter Chicken is a beloved Indian dish 
+          often served with naan bread or basmati rice.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$25.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="bibimbap1.jpg" alt="Dolsot_Bibimbap">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Bibimbap</h3>
+        <p>
+            Experience the vibrant flavors of Korea with our Dol-sot Bibimbap. Served in a sizzling stone pot, this
+             traditional dish features a colorful medley of fresh vegetables, thinly sliced marinated beef, and a perfectly fried egg
+             atop a bed of steaming rice. Drizzle with our signature gochujang sauce and mix it all together for a delightful combination of textures and tastes.    
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$25.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="padthai.jpg" alt="Pad_thai">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Pad Thai</h3>
+        <p>
+            Transport your taste buds to the bustling streets of Thailand with our flavorful Pad Thai.
+             This classic Thai stir-fried noodle dish features rice noodles, perfectly balanced sweet
+              and savory tamarind sauce, tofu or shrimp, crushed peanuts, bean sprouts, and lime wedges.
+               Every bite is a symphony of flavors, offering a harmonious blend of textures and a taste 
+               of the vibrant Thai street food scene.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$18.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="peking duck.jpg" alt="peking_duck">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Peking Duck</h3>
+        <p>
+            Indulge in the exquisite flavors of China with our Peking Duck. Delicately crispy duck skin is 
+            skillfully carved and served with thin, pillowy pancakes, hoisin sauce, and julienned scallions. 
+            The succulent duck meat is a perfect contrast to the crispy skin, creating a mouthwatering combination
+             that pays homage to the centuries-old culinary tradition of Peking duck.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$25.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="pho.jpeg" alt="pho">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Pho</h3>
+        <p>
+          A fragrant and aromatic noodle soup consisting of beef or chicken broth, 
+          rice noodles, thinly sliced meat (such as beef brisket or chicken), fresh herbs like 
+          cilantro and Thai basil, bean sprouts, and lime wedges. Pho is a beloved Vietnamese dish 
+          cherished for its comforting warmth and depth of flavor.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$19.00</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="srilankan_fishcurry.jpg" alt="Sri lankan Fish Curry">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Sri lankan Fish Curry</h3>
+        <p>Sri Lankan fish curry is typically made with pieces of fish (such as tuna or mackerel) 
+          cooked in a spicy and tangy sauce made from coconut milk, onions, garlic, ginger, curry 
+          leaves, and a blend of spices including mustard seeds, fenugreek, and turmeric.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$21.00</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more menu containers as needed -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const quantityDisplays = document.querySelectorAll('.quantity-display');
+      const plusBtns = document.querySelectorAll('.plus-btn');
+      const minusBtns = document.querySelectorAll('.minus-btn');
+
+      // Function to update quantity display
+      function updateQuantityDisplay(index, value) {
+        quantityDisplays[index].textContent = value;
+      }
+
+      // Event listeners for plus buttons
+      plusBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          const currentQuantity = parseInt(quantityDisplays[index].textContent);
+          updateQuantityDisplay(index, currentQuantity + 1);
+        });
+      });
+            // Event listeners for minus buttons
+            minusBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          const currentQuantity = parseInt(quantityDisplays[index].textContent);
+          if (currentQuantity > 0) {
+            updateQuantityDisplay(index, currentQuantity - 1);
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+{% endblock %}
