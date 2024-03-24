@@ -18,26 +18,6 @@ align-items: center;
 padding: 1em;
 }
 
-nav {
-background-color: #f7d794; /* Soft orange for the navigation bar */
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 0.5em;
-}
-
-nav a {
-color: #333; /* Dark gray text for navigation links */
-text-decoration: none;
-padding: 0.5em 1em;
-margin: 0 0.5em;
-border-radius: 5px;
-transition: background-color 0.3s;
-}
-
-nav a:hover {
-background-color: #f1c40f; /* A slightly darker orange on hover */
-}
 
 img.logo {
 max-width: 80px; /* Set the logo width to 80px */
@@ -146,7 +126,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="sushi.jpg" alt="sushiPlatter_img">
+      <img src="{% static "shop/sushi.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Sushi Platter</h3>
         <p> A selection of fresh sushi rolls and nigiri, featuring
@@ -168,7 +148,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="Ind_ButterChicken.jpg" alt="butterChickenImg">
+      <img src="{% static "shop/Ind_ButterChicken.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Butter Chicken</h3>
         <p>Tender pieces of chicken cooked in a creamy tomato-based
@@ -189,7 +169,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="bibimbap1.jpg" alt="Dolsot_Bibimbap">
+      <img src="{% static "shop/bibimbap1.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Bibimbap</h3>
         <p>
@@ -212,7 +192,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="padthai.jpg" alt="Pad_thai">
+      <img src="{% static "shop/padthai.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Pad Thai</h3>
         <p>
@@ -235,7 +215,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="peking duck.jpg" alt="peking_duck">
+      <img src="{% static "shop/peking duck.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Peking Duck</h3>
         <p>
@@ -257,7 +237,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="pho.jpeg" alt="pho">
+      <img src="{% static "shop/pho.jpeg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Pho</h3>
         <p>
@@ -280,7 +260,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="srilankan_fishcurry.jpg" alt="Sri lankan Fish Curry">
+      <img src="{% static "shop/srilankan_fishcurry.jpg"" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Sri lankan Fish Curry</h3>
         <p>Sri Lankan fish curry is typically made with pieces of fish (such as tuna or mackerel)

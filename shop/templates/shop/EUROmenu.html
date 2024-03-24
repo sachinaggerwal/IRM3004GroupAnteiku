@@ -18,26 +18,6 @@ align-items: center;
 padding: 1em;
 }
 
-nav {
-background-color: #f7d794; /* Soft orange for the navigation bar */
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 0.5em;
-}
-
-nav a {
-color: #333; /* Dark gray text for navigation links */
-text-decoration: none;
-padding: 0.5em 1em;
-margin: 0 0.5em;
-border-radius: 5px;
-transition: background-color 0.3s;
-}
-
-nav a:hover {
-background-color: #f1c40f; /* A slightly darker orange on hover */
-}
 
 img.logo {
 max-width: 80px; /* Set the logo width to 80px */
@@ -153,7 +133,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="schnitzel_schpaetzel.jpg" alt="Schnitzel">
+      <img src="{% static "shop/schnitzel_schpaetzel.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Schnitzel and Spaetzle</h3>
         <p>
@@ -175,7 +155,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="spaghetti_carbonara.jpg" alt="Spaghetti Carbonara">
+      <img src="{% static "shop/spaghetti_carbonara.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Spaghetti Carbonara</h3>
         <p>
@@ -202,7 +182,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="{% static " shop/fish_chips.jpeg" %}" class="logo-img" />
+      <img src="{% static "shop/fish_chips.jpeg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Fish n Chips</h3>
         <p>
@@ -224,7 +204,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="Sauerbraten.jpg" alt="Sauerbraten">
+      <img src="{% static "shop/Sauerbraten.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Sauerbraten</h3>
         <p>
@@ -247,7 +227,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="Coq_au_Vin.jpg" alt="Coq au Vin">
+      <img src="{% static "shop/Coq_au_Vin.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Coq au Vin</h3>
         <p>
@@ -270,7 +250,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="paella.jpg" alt="Paella">
+      <img src="{% static "shop/paella.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Paella</h3>
         <p>
@@ -295,7 +275,7 @@ margin: 0 10px;
 
   <div class="menu-container">
     <div class="menu-item">
-      <img src="swedish meatballs.jpg" alt="Swedish Meatballs">
+      <img src="{% static "shop/swedish meatballs.jpg" %}" class="logo-img" />
       <div class="menu-item-info">
         <h3 style="color: #333;">Swedish Meatballs</h3>
         <p>
