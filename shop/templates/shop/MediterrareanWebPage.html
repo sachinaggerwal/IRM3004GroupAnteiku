@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f6e4; /* Light yellowish background */
+    }
+
+    header {
+      background-color: #f7d794; /* Soft orange for the header */
+      color: #333; /* Dark gray text for the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+    }
+
+    nav {
+      background-color: #f7d794; /* Soft orange for the navigation bar */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5em;
+    }
+
+    nav a {
+      color: #333; /* Dark gray text for navigation links */
+      text-decoration: none;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f1c40f; /* A slightly darker orange on hover */
+    }
+
+    img.logo {
+      max-width: 80px; /* Set the logo width to 80px */
+      height: auto;
+      border-radius: 50%; /* Add rounded corners to the logo */
+    }
+
+    .top-right-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0.5em;
+    }
+
+    .top-right-buttons img {
+      max-width: 30px; /* Adjust the width as needed */
+      height: auto;
+      margin-left: 1em;
+      cursor: pointer;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .menu-button {
+      width: 150px; /* Fixed width for the buttons */
+      background-color: #f7d794; /* Soft orange for menu buttons */
+      color: #333; /* Dark gray text for menu buttons */
+      padding: 10px;
+      border-radius: 10px; /* Add rounded corners to menu buttons */
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .menu-button:hover {
+      background-color: #f1c40f; /* A slightly darker orange on hover */
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f7d794; /* Soft orange for menu containers */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    
+
+    .menu-item {
+  display: flex;
+  align-items: flex-start; /* Align items to the start (left side) */
+  margin-bottom: 20px;
+}
+
+
+    .menu-item img {
+      max-width: 200px; /* Adjust the width as needed */
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px; /* Add rounded corners to menu item images */
+    }
+
+    
+
+    .menu-item-info {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .item-price {
+
+  bottom: 10px;
+  right: 10px;
+  background-color: #f7d794; /* Background color for the price display */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .quantity-controls button {
+      background-color: #f1c40f; /* A slightly darker orange for quantity controls */
+      color: #333; /* Dark gray text for quantity controls */
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .quantity-display {
+      font-size: 18px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="CClogo.jpeg" alt="Your Logo" class="logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="top-right-buttons">
+      <img src="shopping_cart_PNG38.png" alt="">
+      <img src="3 solid bars.png" alt="Button 2">
+      <img src="magnifying-glass-clipart-19.png" alt="Button 3">
+    </div>
+  </header>
+
+  <div class="menu-buttons">
+    <a href="AMERmenu.html" class="menu-button">Americas</a>
+    <a href="ASIAmenu.html" class="menu-button">Asian</a>
+    <a href="EUROmenu.html" class="menu-button">European</a>
+    <a href="MEDImenu.html" class="menu-button">Mediterranean</a>
+    <a href="MEDImenu.html" class="menu-button">African</a>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220898213536464896/Moussaka-7.png?ex=66109d11&is=65fe2811&hm=140226046f8686a798ffae1c5807615fc430b5d16d6a757acbf62d922d4fa998&" alt="Moussaka">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Moussaka</h3>
+        <p>
+          A tantalizing Mediterranean delight featuring layers of tender eggplant, savory 
+          minced meat, aromatic spices, and a creamy béchamel sauce, baked to golden perfection 
+          for a symphony of flavors and textures that captivate the senses.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+      </div>
+        <!-- Price display -->
+        <div class="item-price">$24.00</div></div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220900081990111363/Chicken-Shawarma-recipe-card.png?ex=66109ece&is=65fe29ce&hm=8fe128def464a5320f9cbb3f7c1ef72ee62098544609821744ba36c7b75b8bea&" alt="Chicken Shawarama">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Chicken Shawarama</h3>
+        <p>
+           Dive into the irresistible flavors of the Middle East with our Chicken Shawarma. Picture 
+           tender slices of marinated chicken, slow-roasted to perfection on a rotating spit, infused 
+           with a tantalizing blend of spices such as cumin, paprika, and a hint of chili powder. 
+           Enveloped in a warm, fluffy pita bread, each bite is a journey of textures and tastes, from 
+           the juicy chicken to the crispness of fresh lettuce, tomatoes, and cucumbers. But what truly 
+           elevates this dish is the creamy tahini sauce, drizzled generously over the filling, adding 
+           a velvety richness that ties all the flavors together.     
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+    <div class="item-price">$19.00</div></div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220901447152046260/Heinens_whole_grilled_fish_800x550.png?ex=6610a014&is=65fe2b14&hm=b57db8b1f7ae238d6b78de2535edaa1030838d8abbe8409f2444bf6e5af5e0ab&" alt="Grilled Fish with Lemon and Herbs">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Grilled Fish with Lemon and Herbs</h3>
+        <p>
+             A succulent fillet of fish, kissed by flames on the grill until it boasts a tantalizing char. 
+             As you approach, the aroma of smoky goodness dances in the air, mingling with the zesty scent 
+             of freshly sliced lemon and fragrant herbs. Each bite is a harmonious symphony of flavors – 
+             the delicate flesh of the fish, infused with the bright acidity of lemon and the earthy 
+             freshness of herbs. It's a culinary masterpiece, where simplicity meets sophistication, 
+             leaving your taste buds longing for just one more blissful bite.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$18.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220902038309961788/9901.png?ex=6610a0a1&is=65fe2ba1&hm=4acac249123fb58c4c46dcd94fbad5658fcf05d0a284d1be6818da94832dd57a&" alt="Chicken Falafel">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Chicken Falafel</h3>
+        <p>
+           A harmonious fusion of tender, seasoned chicken and traditional falafel spices, 
+           delivering a delightful crunch on the outside and a moist, flavorful center, evoking 
+           the vibrant essence of Middle Eastern street food.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$22.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220902684987621436/Lamb-Tagine.png?ex=6610a13b&is=65fe2c3b&hm=ab9ea5b6a79085a4e9175e127c0bb495f8b9fd3fcfeca3a48787a2a86924a9a1&" alt="Lamb Tagine">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Lamb Tagine</h3>
+        <p>
+          A slow-cooked stew made with tender pieces of lamb, dried fruits like apricots or prunes, 
+          vegetables, and a blend of aromatic spices such as cinnamon, cumin, and ginger.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$26.00</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220903835539734639/Pasta-alla-Norma-800x550-1.png?ex=6610a24d&is=65fe2d4d&hm=f281b9a9077fab184e2010c8cfa98c3bb66241f7309d30f6ee484aadf61a81b2&" alt="Pasta all Norma">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Pasta all Norma</h3>
+        <p>
+          Sicilian pasta dish featuring penne or spaghetti tossed in a sauce made from tomatoes, 
+          eggplant, garlic, basil, and olive oil, topped with grated ricotta salata cheese.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$20.00</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220904359043403776/14713-souvlaki-ddmfs-Beauty-3x4-06471d380b394255a7716405c4ec0a22.png?ex=6610a2ca&is=65fe2dca&hm=49e5c057663bf8e4829a2876568ed20221714d186239ba377ec29cbcfff0b29b&" alt="Soulvaki">
+      <div class="menu-item-info">
+        <h3 style="color: #333;">Soulvaki</h3>
+        <p>
+          Souvlaki is a Greek culinary delight featuring tender, marinated meat skewered and grilled to perfection, 
+          infused with aromatic herbs and spices. Served with warm pita, fresh vegetables, and 
+          tangy tzatziki sauce, souvlaki offers a harmonious blend of flavors and textures that 
+          evoke the essence of Mediterranean cuisine.
+        </p>
+        <div class="quantity-controls">
+          <button class="minus-btn">-</button>
+          <span class="quantity-display">0</span>
+          <button class="plus-btn">+</button>
+        </div>
+        <!-- Price display -->
+        <div class="item-price">$16.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more menu containers as needed -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const quantityDisplays = document.querySelectorAll('.quantity-display');
+      const plusBtns = document.querySelectorAll('.plus-btn');
+      const minusBtns = document.querySelectorAll('.minus-btn');
+
+      // Function to update quantity display
+      function updateQuantityDisplay(index, value) {
+        quantityDisplays[index].textContent = value;
+      }
+
+      // Event listeners for plus buttons
+      plusBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          const currentQuantity = parseInt(quantityDisplays[index].textContent);
+          updateQuantityDisplay(index, currentQuantity + 1);
+        });
+      });
+            // Event listeners for minus buttons
+            minusBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          const currentQuantity = parseInt(quantityDisplays[index].textContent);
+          if (currentQuantity > 0) {
+            updateQuantityDisplay(index, currentQuantity - 1);
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
