@@ -1,368 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f6e4; /* Light yellowish background */
-    }
+{% extends 'shop/basic.html' %}
+{% block title%} Culinary Corner{% endblock %}
 
-    header {
-      background-color: #f7d794; /* Soft orange for the header */
-      color: #333; /* Dark gray text for the header */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em;
-    }
+{% block css %}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f9f6e4;
+/* Light yellowish background */
+}
 
-    nav {
-      background-color: #f7d794; /* Soft orange for the navigation bar */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.5em;
-    }
+header {
+background-color: #f7d794;
+/* Soft orange for the header */
+color: #333;
+/* Dark gray text for the header */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1em;
+}
 
-    nav a {
-      color: #333; /* Dark gray text for navigation links */
-      text-decoration: none;
-      padding: 0.5em 1em;
-      margin: 0 0.5em;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+img.logo {
+max-width: 80px;
+/* Set the logo width to 80px */
+height: auto;
+border-radius: 50%;
+/* Add rounded corners to the logo */
+}
 
-    nav a:hover {
-      background-color: #f1c40f; /* A slightly darker orange on hover */
-    }
+.top-right-buttons {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+padding: 0.5em;
+}
 
-    img.logo {
-      max-width: 80px; /* Set the logo width to 80px */
-      height: auto;
-      border-radius: 50%; /* Add rounded corners to the logo */
-    }
+.top-right-buttons img {
+max-width: 30px;
+/* Adjust the width as needed */
+height: auto;
+margin-left: 1em;
+cursor: pointer;
+}
 
-    .top-right-buttons {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 0.5em;
-    }
+.menu-buttons {
+display: flex;
+justify-content: space-around;
+margin: 20px 0;
+}
 
-    .top-right-buttons img {
-      max-width: 30px; /* Adjust the width as needed */
-      height: auto;
-      margin-left: 1em;
-      cursor: pointer;
-    }
+.menu-button {
+width: 150px;
+/* Fixed width for the buttons */
+background-color: #f7d794;
+/* Soft orange for menu buttons */
+color: #333;
+/* Dark gray text for menu buttons */
+padding: 10px;
+border-radius: 10px;
+/* Add rounded corners to menu buttons */
+cursor: pointer;
+transition: background-color 0.3s;
+text-align: center;
+}
 
-    .menu-buttons {
-      display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
-    }
+.menu-button:hover {
+background-color: #f1c40f;
+/* A slightly darker orange on hover */
+}
 
-    .menu-button {
-      width: 150px; /* Fixed width for the buttons */
-      background-color: #f7d794; /* Soft orange for menu buttons */
-      color: #333; /* Dark gray text for menu buttons */
-      padding: 10px;
-      border-radius: 10px; /* Add rounded corners to menu buttons */
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-align: center;
-    }
-
-    .menu-button:hover {
-      background-color: #f1c40f; /* A slightly darker orange on hover */
-    }
-
-    .menu-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      margin: 20px;
-      background-color: #f7d794; /* Soft orange for menu containers */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    
-
-    .menu-item {
-  display: flex;
-  align-items: flex-start; /* Align items to the start (left side) */
-  margin-bottom: 20px;
+.menu-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+margin: 20px;
+background-color: #f7d794;
+/* Soft orange for menu containers */
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-    .menu-item img {
-      max-width: 200px; /* Adjust the width as needed */
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px; /* Add rounded corners to menu item images */
-    }
 
-    
-
-    .menu-item-info {
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .item-price {
-
-  bottom: 10px;
-  right: 10px;
-  background-color: #f7d794; /* Background color for the price display */
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
+.menu-item {
+display: flex;
+align-items: flex-start;
+/* Align items to the start (left side) */
+margin-bottom: 20px;
 }
 
-    .quantity-controls {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
+
+.menu-item img {
+max-width: 200px;
+/* Adjust the width as needed */
+height: auto;
+margin-right: 20px;
+border-radius: 10px;
+/* Add rounded corners to menu item images */
+}
+
+
+
+.menu-item-info {
+flex-grow: 1;
+text-align: left;
+}
+
+.item-price {
+
+bottom: 10px;
+right: 10px;
+background-color: #f7d794;
+/* Background color for the price display */
+padding: 5px 10px;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.quantity-controls {
+display: flex;
+align-items: center;
+margin-top: 10px;
+}
+
+.quantity-controls button {
+background-color: #f1c40f;
+/* A slightly darker orange for quantity controls */
+color: #333;
+/* Dark gray text for quantity controls */
+border: none;
+padding: 5px 10px;
+margin: 0 5px;
+cursor: pointer;
+border-radius: 3px;
+}
+
+.quantity-display {
+font-size: 18px;
+margin: 0 10px;
+}
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221300863927324703/Smash-Burgers-1530-square.png?ex=66121410&is=65ff9f10&hm=30bb6912cea5be6c62ba7d6111c2ad3dd7c957601bbd892e6ceced7cbd93883f&"
+      alt="Burger and Fries">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Burger and Fries</h3>
+      <p>
+        Sink your teeth into a juicy American-style burger, served on a toasted bun and
+        topped with all the fixings such as lettuce, tomato, onion, pickles, and your
+        choice of cheese. Accompanied by a generous portion of crispy golden fries,
+        this classic combo is a beloved staple of American cuisine, offering a satisfying
+        and indulgent dining experience.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$17.00</div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221301355952472228/Grilled-Ribs-RECIPE-CARD.png?ex=66121485&is=65ff9f85&hm=74164e55618f61349e9507e75a02fcd4ce53dd1d13d7418d7153a8c1d76f7814&"
+      alt="BBQ Ribs">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">BBQ Ribs</h3>
+      <p>
+        Succulent ribs, slow-cooked to perfection and generously coated with a smoky barbecue
+        sauce. These fall-off-the-bone ribs are a quintessential American favorite, often
+        served with classic sides like coleslaw, cornbread, and baked beans.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$27.00</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221301923928346665/tacos-al-pastor-feature-1.png?ex=6612150d&is=65ffa00d&hm=58367c1e988c88335cf78bc31ca732e93175160b23ce634baf11bd191a316335&"
+      alt="Tacos al Pastor">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Tacos al Pastor</h3>
+      <p>
+        Tender marinated pork, thinly sliced and piled into soft corn tortillas, topped
+        with fresh pineapple, onions, cilantro, and a squeeze of lime. Tacos al Pastor
+        are a flavorful and iconic Mexican street food, influenced by Middle Eastern
+        shawarma and brought to Mexico by Lebanese immigrants.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$21.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221302431170826351/Poutine-7-500x375.png?ex=66121586&is=65ffa086&hm=3e61e00a8d4027ef15d4a7bdc7d6fe9e967732a4be77fbfccb55a45fdec6d162&"
+      alt="Poutine">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Poutine</h3>
+      <p>
+        A beloved Canadian dish originating from Quebec, featuring crispy french
+        fries topped with cheese curds and smothered in savory gravy. Poutine offers
+        a comforting and indulgent combination of flavors and textures, perfect
+        for satisfying any comfort food craving.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$16.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221302802127519784/argentinian-beef-empanadas.png?ex=661215de&is=65ffa0de&hm=7b969fa277cc87b92c38c4ddc7fee2bd39283d0e2a0ba994aa0276ee0a25b621&"
+      alt="Empanadas">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Empanadas</h3>
+      <p>
+        Handheld savory pastries filled with a variety of ingredients such as
+        seasoned ground beef, chicken, cheese, or vegetables, and then baked
+        or fried to golden perfection. Empanadas are a beloved snack or meal in
+        Argentina, often served with chimichurri sauce for dipping.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$22.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221303311035273316/pastel-de-choclo-sq.png?ex=66121658&is=65ffa158&hm=bb5cc77679d38c498e628abe44a5b23a62aec00a2a21d608b16298da26127ec9&"
+      alt="Pastel de Choclo">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Pastel de Choclo</h3>
+      <p>
+        A traditional Chilean dish resembling a corn pie, made with a sweet corn batter
+        layered with a savory filling of ground beef, onions, olives, hard-boiled
+        eggs, and spices. Pastel de Choclo is baked until the corn topping is golden
+        and crispy, resulting in a comforting and flavorful meal that showcases
+        the unique flavors of Chilean cuisine.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$19.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1221303694113378404/eabadaf71c49ba2b4c70d7317518fa5225c6bc82.png?ex=661216b3&is=65ffa1b3&hm=de1c0e7141e3baa38f71d4852fbe8d8ab65dff36ca07752898afd62aba84e8f6&"
+      alt="Feijoada">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Feijoada</h3>
+      <p>
+        A hearty Brazilian stew made with black beans and a variety of pork cuts
+        such as sausage, bacon, and pork ribs. Feijoada is typically served with rice,
+        collard greens, orange slices, and farofa (toasted cassava flour), creating
+        a rich and satisfying meal.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$20.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Add more menu containers as needed -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const quantityDisplays = document.querySelectorAll('.quantity-display');
+    const plusBtns = document.querySelectorAll('.plus-btn');
+    const minusBtns = document.querySelectorAll('.minus-btn');
+
+    // Function to update quantity display
+    function updateQuantityDisplay(index, value) {
+      quantityDisplays[index].textContent = value;
     }
 
-    .quantity-controls button {
-      background-color: #f1c40f; /* A slightly darker orange for quantity controls */
-      color: #333; /* Dark gray text for quantity controls */
-      border: none;
-      padding: 5px 10px;
-      margin: 0 5px;
-      cursor: pointer;
-      border-radius: 3px;
-    }
-
-    .quantity-display {
-      font-size: 18px;
-      margin: 0 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="CClogo.jpeg" alt="Your Logo" class="logo">
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div class="top-right-buttons">
-      <img src="shopping_cart_PNG38.png" alt="">
-      <img src="3 solid bars.png" alt="Button 2">
-      <img src="magnifying-glass-clipart-19.png" alt="Button 3">
-    </div>
-  </header>
-
-  <div class="menu-buttons">
-    <a href="AMERmenu.html" class="menu-button">Americas</a>
-    <a href="ASIAmenu.html" class="menu-button">Asian</a>
-    <a href="EUROmenu.html" class="menu-button">European</a>
-    <a href="MEDImenu.html" class="menu-button">Mediterranean</a>
-    <a href="MEDImenu.html" class="menu-button">African</a>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221300863927324703/Smash-Burgers-1530-square.png?ex=66121410&is=65ff9f10&hm=30bb6912cea5be6c62ba7d6111c2ad3dd7c957601bbd892e6ceced7cbd93883f&" alt="Burger and Fries">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Burger and Fries</h3>
-        <p>
-          Sink your teeth into a juicy American-style burger, served on a toasted bun and 
-          topped with all the fixings such as lettuce, tomato, onion, pickles, and your 
-          choice of cheese. Accompanied by a generous portion of crispy golden fries, 
-          this classic combo is a beloved staple of American cuisine, offering a satisfying 
-          and indulgent dining experience.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-      </div>
-        <!-- Price display -->
-        <div class="item-price">$17.00</div></div>
-    </div>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221301355952472228/Grilled-Ribs-RECIPE-CARD.png?ex=66121485&is=65ff9f85&hm=74164e55618f61349e9507e75a02fcd4ce53dd1d13d7418d7153a8c1d76f7814&" alt="BBQ Ribs">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">BBQ Ribs</h3>
-        <p>
-           Succulent ribs, slow-cooked to perfection and generously coated with a smoky barbecue 
-           sauce. These fall-off-the-bone ribs are a quintessential American favorite, often 
-           served with classic sides like coleslaw, cornbread, and baked beans.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-    <div class="item-price">$27.00</div></div>
-      </div>
-    </div>
-    
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221301923928346665/tacos-al-pastor-feature-1.png?ex=6612150d&is=65ffa00d&hm=58367c1e988c88335cf78bc31ca732e93175160b23ce634baf11bd191a316335&" alt="Tacos al Pastor">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Tacos al Pastor</h3>
-        <p>
-             Tender marinated pork, thinly sliced and piled into soft corn tortillas, topped 
-             with fresh pineapple, onions, cilantro, and a squeeze of lime. Tacos al Pastor 
-             are a flavorful and iconic Mexican street food, influenced by Middle Eastern 
-             shawarma and brought to Mexico by Lebanese immigrants.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$21.00</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221302431170826351/Poutine-7-500x375.png?ex=66121586&is=65ffa086&hm=3e61e00a8d4027ef15d4a7bdc7d6fe9e967732a4be77fbfccb55a45fdec6d162&" alt="Poutine">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Poutine</h3>
-        <p>
-           A beloved Canadian dish originating from Quebec, featuring crispy french 
-           fries topped with cheese curds and smothered in savory gravy. Poutine offers 
-           a comforting and indulgent combination of flavors and textures, perfect 
-           for satisfying any comfort food craving.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$16.00</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221302802127519784/argentinian-beef-empanadas.png?ex=661215de&is=65ffa0de&hm=7b969fa277cc87b92c38c4ddc7fee2bd39283d0e2a0ba994aa0276ee0a25b621&" alt="Empanadas">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Empanadas</h3>
-        <p>
-          Handheld savory pastries filled with a variety of ingredients such as 
-          seasoned ground beef, chicken, cheese, or vegetables, and then baked 
-          or fried to golden perfection. Empanadas are a beloved snack or meal in 
-          Argentina, often served with chimichurri sauce for dipping.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$22.00</div></div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221303311035273316/pastel-de-choclo-sq.png?ex=66121658&is=65ffa158&hm=bb5cc77679d38c498e628abe44a5b23a62aec00a2a21d608b16298da26127ec9&" alt="Pastel de Choclo">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Pastel de Choclo</h3>
-        <p>
-          A traditional Chilean dish resembling a corn pie, made with a sweet corn batter 
-          layered with a savory filling of ground beef, onions, olives, hard-boiled 
-          eggs, and spices. Pastel de Choclo is baked until the corn topping is golden 
-          and crispy, resulting in a comforting and flavorful meal that showcases 
-          the unique flavors of Chilean cuisine.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$19.00</div></div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221303694113378404/eabadaf71c49ba2b4c70d7317518fa5225c6bc82.png?ex=661216b3&is=65ffa1b3&hm=de1c0e7141e3baa38f71d4852fbe8d8ab65dff36ca07752898afd62aba84e8f6&" alt="Feijoada">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Feijoada</h3>
-        <p>
-          A hearty Brazilian stew made with black beans and a variety of pork cuts 
-          such as sausage, bacon, and pork ribs. Feijoada is typically served with rice, 
-          collard greens, orange slices, and farofa (toasted cassava flour), creating 
-          a rich and satisfying meal.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$20.00</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Add more menu containers as needed -->
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const quantityDisplays = document.querySelectorAll('.quantity-display');
-      const plusBtns = document.querySelectorAll('.plus-btn');
-      const minusBtns = document.querySelectorAll('.minus-btn');
-
-      // Function to update quantity display
-      function updateQuantityDisplay(index, value) {
-        quantityDisplays[index].textContent = value;
-      }
-
-      // Event listeners for plus buttons
-      plusBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function() {
-          const currentQuantity = parseInt(quantityDisplays[index].textContent);
-          updateQuantityDisplay(index, currentQuantity + 1);
-        });
-      });
-            // Event listeners for minus buttons
-            minusBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function() {
-          const currentQuantity = parseInt(quantityDisplays[index].textContent);
-          if (currentQuantity > 0) {
-            updateQuantityDisplay(index, currentQuantity - 1);
-          }
-        });
+    // Event listeners for plus buttons
+    plusBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function () {
+        const currentQuantity = parseInt(quantityDisplays[index].textContent);
+        updateQuantityDisplay(index, currentQuantity + 1);
       });
     });
-  </script>
-
-</body>
-</html>
+    // Event listeners for minus buttons
+    minusBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function () {
+        const currentQuantity = parseInt(quantityDisplays[index].textContent);
+        if (currentQuantity > 0) {
+          updateQuantityDisplay(index, currentQuantity - 1);
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

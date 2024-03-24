@@ -13,5 +13,10 @@ urlpatterns = [
     path("products/<int:myid>", views.product_view, name="ProductView"),
     path("checkout/", views.checkout, name="Checkout"),
     path("handlerequest/", views.handlerequest, name="HandleRequest"),
-    path("faq/", views.faq, name="faq")
+    path("faq/", views.faq, name="faq"),
+    path("african/", views.african, name="africanWepage"),
+    path("america/", views.america, name="americanWepage"),
+    path("asia/", views.asia, name="asiaWepage"),
+    path("euro/", views.euro, name="euroWepage"),
+    path("mediterrarean/", views.mediterrarean, name="mediterrarreanWepage")
 ]

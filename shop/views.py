@@ -70,6 +70,35 @@ def faq(request):
     '''
     return render(request, 'shop/FAQ.html')
 
+def african(request):
+    '''
+    method for viewing the african page
+    '''
+    return render(request, 'shop/AfricanWebPage.html')
+
+def america(request):
+    '''
+    method for viewing the america page
+    '''
+    return render(request, 'shop/AmericasWebpage.html')
+
+def asia(request):
+    '''
+    method for viewing the asia page
+    '''
+    return render(request, 'shop/ASIAmenu.html')
+
+def euro(request):
+    '''
+    method for viewing the european page
+    '''
+    return render(request, 'shop/EUROmenu.html')
+
+def mediterrarean(request):
+    '''
+    method for viewing the mediterrarean page
+    '''
+    return render(request, 'shop/MediterrareanWebPage.html')
 
 def contact(request):
     '''

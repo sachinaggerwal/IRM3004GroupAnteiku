@@ -1,365 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f6e4; /* Light yellowish background */
-    }
+{% extends 'shop/basic.html' %}
+{% block title%} Culinary Corner{% endblock %}
 
-    header {
-      background-color: #f7d794; /* Soft orange for the header */
-      color: #333; /* Dark gray text for the header */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em;
-    }
+{% block css %}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f9f6e4; /* Light yellowish background */
+}
 
-    nav {
-      background-color: #f7d794; /* Soft orange for the navigation bar */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.5em;
-    }
+header {
+background-color: #f7d794; /* Soft orange for the header */
+color: #333; /* Dark gray text for the header */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1em;
+}
 
-    nav a {
-      color: #333; /* Dark gray text for navigation links */
-      text-decoration: none;
-      padding: 0.5em 1em;
-      margin: 0 0.5em;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+nav {
+background-color: #f7d794; /* Soft orange for the navigation bar */
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0.5em;
+}
 
-    nav a:hover {
-      background-color: #f1c40f; /* A slightly darker orange on hover */
-    }
+nav a {
+color: #333; /* Dark gray text for navigation links */
+text-decoration: none;
+padding: 0.5em 1em;
+margin: 0 0.5em;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
 
-    img.logo {
-      max-width: 80px; /* Set the logo width to 80px */
-      height: auto;
-      border-radius: 50%; /* Add rounded corners to the logo */
-    }
+nav a:hover {
+background-color: #f1c40f; /* A slightly darker orange on hover */
+}
 
-    .top-right-buttons {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 0.5em;
-    }
+img.logo {
+max-width: 80px; /* Set the logo width to 80px */
+height: auto;
+border-radius: 50%; /* Add rounded corners to the logo */
+}
 
-    .top-right-buttons img {
-      max-width: 30px; /* Adjust the width as needed */
-      height: auto;
-      margin-left: 1em;
-      cursor: pointer;
-    }
+.top-right-buttons {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+padding: 0.5em;
+}
 
-    .menu-buttons {
-      display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
-    }
+.top-right-buttons img {
+max-width: 30px; /* Adjust the width as needed */
+height: auto;
+margin-left: 1em;
+cursor: pointer;
+}
 
-    .menu-button {
-      width: 150px; /* Fixed width for the buttons */
-      background-color: #f7d794; /* Soft orange for menu buttons */
-      color: #333; /* Dark gray text for menu buttons */
-      padding: 10px;
-      border-radius: 10px; /* Add rounded corners to menu buttons */
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-align: center;
-    }
+.menu-buttons {
+display: flex;
+justify-content: space-around;
+margin: 20px 0;
+}
 
-    .menu-button:hover {
-      background-color: #f1c40f; /* A slightly darker orange on hover */
-    }
+.menu-button {
+width: 150px; /* Fixed width for the buttons */
+background-color: #f7d794; /* Soft orange for menu buttons */
+color: #333; /* Dark gray text for menu buttons */
+padding: 10px;
+border-radius: 10px; /* Add rounded corners to menu buttons */
+cursor: pointer;
+transition: background-color 0.3s;
+text-align: center;
+}
 
-    .menu-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      margin: 20px;
-      background-color: #f7d794; /* Soft orange for menu containers */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+.menu-button:hover {
+background-color: #f1c40f; /* A slightly darker orange on hover */
+}
 
-    
-
-    .menu-item {
-  display: flex;
-  align-items: flex-start; /* Align items to the start (left side) */
-  margin-bottom: 20px;
+.menu-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+margin: 20px;
+background-color: #f7d794; /* Soft orange for menu containers */
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-    .menu-item img {
-      max-width: 200px; /* Adjust the width as needed */
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px; /* Add rounded corners to menu item images */
-    }
 
-    
-
-    .menu-item-info {
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .item-price {
-
-  bottom: 10px;
-  right: 10px;
-  background-color: #f7d794; /* Background color for the price display */
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
+.menu-item {
+display: flex;
+align-items: flex-start; /* Align items to the start (left side) */
+margin-bottom: 20px;
 }
 
-    .quantity-controls {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
+
+.menu-item img {
+max-width: 200px; /* Adjust the width as needed */
+height: auto;
+margin-right: 20px;
+border-radius: 10px; /* Add rounded corners to menu item images */
+}
+
+
+
+.menu-item-info {
+flex-grow: 1;
+text-align: left;
+}
+
+.item-price {
+
+bottom: 10px;
+right: 10px;
+background-color: #f7d794; /* Background color for the price display */
+padding: 5px 10px;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.quantity-controls {
+display: flex;
+align-items: center;
+margin-top: 10px;
+}
+
+.quantity-controls button {
+background-color: #f1c40f; /* A slightly darker orange for quantity controls */
+color: #333; /* Dark gray text for quantity controls */
+border: none;
+padding: 5px 10px;
+margin: 0 5px;
+cursor: pointer;
+border-radius: 3px;
+}
+
+.quantity-display {
+font-size: 18px;
+margin: 0 10px;
+}
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220887563640901722/jollof-rice.png?ex=66109326&is=65fe1e26&hm=c66cf3543654dc90c8bf08eba8c3707dbdc0247ed57a487da6868a0b7a12f98e&"
+      alt="Jollof Rice">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Jollof Rice</h3>
+      <p>
+        A popular West African dish made with rice cooked in a flavorful tomato-based sauce,
+        often seasoned with onions, peppers, and a variety of spices such as thyme, curry powder,
+        and bay leaves. Often served with a varitey of meat such as chicken, goat, and beef. Sides
+        such as plantain and coleslaw are also common.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$15.00</div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220888964039184474/images.png?ex=66109474&is=65fe1f74&hm=91d83815da2ed7a9b4242ede6380623770081c91a8c7aa4d29504d28af0a498f&"
+      alt="Pounded Yam and Egusi Soup">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Pounded Yam and Egusi Soup</h3>
+      <p>
+        A Savoury dish from Nigeria and other parts of West Africa, pounded yam is made by boiling yam until
+        it's soft, then pounding it until it reaches a smooth and stretchy consistency. It's typically
+        served with egusi soup, a thick and hearty soup made from ground melon seeds, vegetables,
+        and sometimes meat or fish.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$20.00</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220890498588475463/Takeout-Kit-Ethiopian-Misr-Wat-Teff-Injera-Meal-Kit.png?ex=661095e1&is=65fe20e1&hm=60a399b79e4b2edc8025c9c5c90e1b2ae29c72ae49a898645f539a6c6d7f619a&g"
+      alt="Injera with Wat">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Injera with Wat</h3>
+      <p>
+        A delectable Ethiopian dish featuring spongy injera bread soaking up rich, aromatic
+        stew (wat) filled with tender meat or vegetables, creating a harmonious fusion of
+        flavors and textures, evoking a celebration of culture and tradition in every bite.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$15.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220891420374863882/Chicken-Tagine-with-Chickpeas-and-Olives-square.png?ex=661096bd&is=65fe21bd&hm=f46c6da03d9d419557af355323d825ad3694b98e6c394ee83a16684ac1afbd82&"
+      alt="Tagine">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Tagine</h3>
+      <p>
+        Tagine is a North African dish named after the earthenware pot in which
+        it's cooked. It's a slow-cooked stew made with a variety of ingredients such as
+        lamb, chicken, or fish, along with vegetables, fruits, and aromatic spices
+        like cinnamon, cumin, and saffron.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$25.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220894456786587798/south-african-braai.png?ex=66109991&is=65fe2491&hm=e4dd5033da8001ab2eff50ae6ed2641b482edf5bf6001707a40d472548a17ed3&"
+      alt="Braii (Barbecue)">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Braii (Barbecue)</h3>
+      <p>
+        Braai, the essence of South African culinary tradition, embodies the soulful spirit of
+        gathering around open flames, where succulent meats kissed by smoky flavors mingle
+        with vibrant salads and hearty side dishes, creating a sensory feast that celebrates
+        the joys of friendship, family, and the simple pleasures of life shared under the African sky.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$30.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220895121139040276/Bobotie-at-TasteOfThePlace.png?ex=66109a30&is=65fe2530&hm=56f0aec3a66082472372a8a1dbce44fb486d206b4c6c2d4851eb0554d8321186&"
+      alt="Bobotie">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Bobotie</h3>
+      <p>
+        It's a spiced minced meat casserole topped with an egg custard topping. The meat
+        mixture typically includes ground beef or lamb mixed with onions, garlic, curry
+        powder, and dried fruit such as raisins, and it's often flavored with chutney and bay leaves.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$20.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="menu-container">
+  <div class="menu-item">
+    <img
+      src="https://cdn.discordapp.com/attachments/1198348260557996135/1220895646018572398/Doro-Wat-Recipe-SQ.png?ex=66109aad&is=65fe25ad&hm=77c2e46265739cfa23bab6cc6c1f712082b41690dc00f289d878ac158fe049fc&"
+      alt="Doro Wat">
+    <div class="menu-item-info">
+      <h3 style="color: #333;">Doro Wat</h3>
+      <p>
+        A classic Ethiopian dish and one of the most popular items in Ethiopian cuisine.
+        Doro Wat is a spicy chicken stew made with chicken pieces simmered in a rich and
+        flavorful sauce known as berbere, which is a blend of spices including chili peppers,
+        garlic, ginger, fenugreek, and others.
+      </p>
+      <div class="quantity-controls">
+        <button class="minus-btn">-</button>
+        <span class="quantity-display">0</span>
+        <button class="plus-btn">+</button>
+      </div>
+      <!-- Price display -->
+      <div class="item-price">$25.00</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Add more menu containers as needed -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const quantityDisplays = document.querySelectorAll('.quantity-display');
+    const plusBtns = document.querySelectorAll('.plus-btn');
+    const minusBtns = document.querySelectorAll('.minus-btn');
+
+    // Function to update quantity display
+    function updateQuantityDisplay(index, value) {
+      quantityDisplays[index].textContent = value;
     }
 
-    .quantity-controls button {
-      background-color: #f1c40f; /* A slightly darker orange for quantity controls */
-      color: #333; /* Dark gray text for quantity controls */
-      border: none;
-      padding: 5px 10px;
-      margin: 0 5px;
-      cursor: pointer;
-      border-radius: 3px;
-    }
-
-    .quantity-display {
-      font-size: 18px;
-      margin: 0 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="CClogo.jpeg" alt="Your Logo" class="logo">
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div class="top-right-buttons">
-      <img src="shopping_cart_PNG38.png" alt="">
-      <img src="3 solid bars.png" alt="Button 2">
-      <img src="magnifying-glass-clipart-19.png" alt="Button 3">
-    </div>
-  </header>
-
-  <div class="menu-buttons">
-    <a href="AMERmenu.html" class="menu-button">Americas</a>
-    <a href="ASIAmenu.html" class="menu-button">Asian</a>
-    <a href="EUROmenu.html" class="menu-button">European</a>
-    <a href="MEDImenu.html" class="menu-button">Mediterranean</a>
-    <a href="MEDImenu.html" class="menu-button">African</a>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220887563640901722/jollof-rice.png?ex=66109326&is=65fe1e26&hm=c66cf3543654dc90c8bf08eba8c3707dbdc0247ed57a487da6868a0b7a12f98e&" alt="Jollof Rice">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Jollof Rice</h3>
-        <p>
-          A popular West African dish made with rice cooked in a flavorful tomato-based sauce,
-          often seasoned with onions, peppers, and a variety of spices such as thyme, curry powder,
-          and bay leaves. Often served with a varitey of meat such as chicken, goat, and beef. Sides 
-          such as plantain and coleslaw are also common.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-      </div>
-        <!-- Price display -->
-        <div class="item-price">$15.00</div></div>
-    </div>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220888964039184474/images.png?ex=66109474&is=65fe1f74&hm=91d83815da2ed7a9b4242ede6380623770081c91a8c7aa4d29504d28af0a498f&" alt="Pounded Yam and Egusi Soup">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Pounded Yam and Egusi Soup</h3>
-        <p>
-           A Savoury dish from Nigeria and other parts of West Africa, pounded yam is made by boiling yam until
-           it's soft, then pounding it until it reaches a smooth and stretchy consistency. It's typically 
-           served with egusi soup, a thick and hearty soup made from ground melon seeds, vegetables, 
-           and sometimes meat or fish.    
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-    <div class="item-price">$20.00</div></div>
-      </div>
-    </div>
-    
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220890498588475463/Takeout-Kit-Ethiopian-Misr-Wat-Teff-Injera-Meal-Kit.png?ex=661095e1&is=65fe20e1&hm=60a399b79e4b2edc8025c9c5c90e1b2ae29c72ae49a898645f539a6c6d7f619a&g" alt="Injera with Wat">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Injera with Wat</h3>
-        <p>
-             A delectable Ethiopian dish featuring spongy injera bread soaking up rich, aromatic
-             stew (wat) filled with tender meat or vegetables, creating a harmonious fusion of 
-             flavors and textures, evoking a celebration of culture and tradition in every bite.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$15.00</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220891420374863882/Chicken-Tagine-with-Chickpeas-and-Olives-square.png?ex=661096bd&is=65fe21bd&hm=f46c6da03d9d419557af355323d825ad3694b98e6c394ee83a16684ac1afbd82&" alt="Tagine">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Tagine</h3>
-        <p>
-           Tagine is a North African dish named after the earthenware pot in which
-           it's cooked. It's a slow-cooked stew made with a variety of ingredients such as
-           lamb, chicken, or fish, along with vegetables, fruits, and aromatic spices 
-           like cinnamon, cumin, and saffron.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$25.00</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220894456786587798/south-african-braai.png?ex=66109991&is=65fe2491&hm=e4dd5033da8001ab2eff50ae6ed2641b482edf5bf6001707a40d472548a17ed3&" alt="Braii (Barbecue)">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Braii (Barbecue)</h3>
-        <p>
-          Braai, the essence of South African culinary tradition, embodies the soulful spirit of 
-          gathering around open flames, where succulent meats kissed by smoky flavors mingle 
-          with vibrant salads and hearty side dishes, creating a sensory feast that celebrates 
-          the joys of friendship, family, and the simple pleasures of life shared under the African sky.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$30.00</div></div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220895121139040276/Bobotie-at-TasteOfThePlace.png?ex=66109a30&is=65fe2530&hm=56f0aec3a66082472372a8a1dbce44fb486d206b4c6c2d4851eb0554d8321186&" alt="Bobotie">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Bobotie</h3>
-        <p>
-          It's a spiced minced meat casserole topped with an egg custard topping. The meat 
-          mixture typically includes ground beef or lamb mixed with onions, garlic, curry 
-          powder, and dried fruit such as raisins, and it's often flavored with chutney and bay leaves.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$20.00</div></div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="menu-container">
-    <div class="menu-item">
-      <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1220895646018572398/Doro-Wat-Recipe-SQ.png?ex=66109aad&is=65fe25ad&hm=77c2e46265739cfa23bab6cc6c1f712082b41690dc00f289d878ac158fe049fc&" alt="Doro Wat">
-      <div class="menu-item-info">
-        <h3 style="color: #333;">Doro Wat</h3>
-        <p>
-          A classic Ethiopian dish and one of the most popular items in Ethiopian cuisine. 
-          Doro Wat is a spicy chicken stew made with chicken pieces simmered in a rich and 
-          flavorful sauce known as berbere, which is a blend of spices including chili peppers, 
-          garlic, ginger, fenugreek, and others.
-        </p>
-        <div class="quantity-controls">
-          <button class="minus-btn">-</button>
-          <span class="quantity-display">0</span>
-          <button class="plus-btn">+</button>
-        </div>
-        <!-- Price display -->
-        <div class="item-price">$25.00</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Add more menu containers as needed -->
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const quantityDisplays = document.querySelectorAll('.quantity-display');
-      const plusBtns = document.querySelectorAll('.plus-btn');
-      const minusBtns = document.querySelectorAll('.minus-btn');
-
-      // Function to update quantity display
-      function updateQuantityDisplay(index, value) {
-        quantityDisplays[index].textContent = value;
-      }
-
-      // Event listeners for plus buttons
-      plusBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function() {
-          const currentQuantity = parseInt(quantityDisplays[index].textContent);
-          updateQuantityDisplay(index, currentQuantity + 1);
-        });
-      });
-            // Event listeners for minus buttons
-            minusBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function() {
-          const currentQuantity = parseInt(quantityDisplays[index].textContent);
-          if (currentQuantity > 0) {
-            updateQuantityDisplay(index, currentQuantity - 1);
-          }
-        });
+    // Event listeners for plus buttons
+    plusBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function () {
+        const currentQuantity = parseInt(quantityDisplays[index].textContent);
+        updateQuantityDisplay(index, currentQuantity + 1);
       });
     });
-  </script>
-
-</body>
-</html>
+    // Event listeners for minus buttons
+    minusBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function () {
+        const currentQuantity = parseInt(quantityDisplays[index].textContent);
+        if (currentQuantity > 0) {
+          updateQuantityDisplay(index, currentQuantity - 1);
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}
