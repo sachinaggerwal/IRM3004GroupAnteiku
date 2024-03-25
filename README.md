@@ -29,7 +29,6 @@
 	<img src="culinary_corner/shop/static/shop/readme_screenshot2.png">
 	<img src="culinary_corner/shop/static/shop/culinarycorner2readmefile_1.png">
 	<img src="culinary_corner/shop/static/shop/culinarycorner2readmefile_2.png">
-	
 </p>
 
 <h2>Completed features in sprint 1</h2>
