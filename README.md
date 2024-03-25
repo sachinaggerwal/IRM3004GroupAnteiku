@@ -27,9 +27,12 @@
 <p>
     <img src="culinary_corner/shop/static/shop/readme_screenshot1.png">
 	<img src="culinary_corner/shop/static/shop/readme_screenshot2.png">
+	<img src="culinary_corner/shop/static/shop/culinarycorner2readmefile_1.png">
+	<img src="culinary_corner/shop/static/shop/culinarycorner2readmefile_2.png">
+	
 </p>
 
-<h2>Completed features</h2>
+<h2>Completed features in sprint 1</h2>
 	-We have managed to successfully integrate a working shopping cart system. This allows you to add items to your shopping cart. There is also a functional counter that alerts you and lets you know how many items have been added. Clicking on the shopping cart also takes you to a page with all selected items ready to be bought.
 
 	-We have implemented a linter. This allows us to keep our code to a certain nationally accepted standard. Code that does not pass this standard is not to be merged with the other code.
@@ -39,13 +42,27 @@
 	-We have successfully integrated all the web pages that we have completed. The ‘Contact Us’ page and the ‘FAQ’ page are all accessible via the home page.
 	-We have managed to implement a cohesive css that make all the pages look similar and related.
 
-<h2>Features not yet completed</h2>
+<h2>Features not yet completed in sprint 1</h2>
 	-We currently have webpages related to certain regions and their food that we haven’t yet completed but we plan to do so by next sprint.
 
 	-Currently working on implementing automated tests for when we are trying to implement new code. This helps us recognize bugs and possible problems that need to be fixed.
 
-<h2>Canceled Features </h2>
+<h2>Canceled Features in sprint 1</h2>
 	-Certain webpages for certain regions were canceled and merged with other regions due to multiple reasons. Some of these include, not having enough content to be a stand-alone and being very similar to other regions.
+
+
+
+<h2>Completed features in sprint 2</h2>
+	- We have successfully added gitHub actions and creating the automated tests.
+	- Successfully implemented the automated tests in the Django project to validate the correctness of application configuration and functionality across models (products, contact information, orders, and order updates) and views.
+	- Successfuly created the menu pages for the african,american,asian,european,and mediterrarean pages.
+	- Implemented, Tested and Refined cuisine menu pages within webpage (African, Mediterranean, European, Asian, American), making sure that the CSS, HTML, and jinja syntax is uniform between the pages.
+
+<h2>Features not yet completed in sprint 2</h2>
+	- The features that were not completed in sprint 2 was implementing the shopping cart into each of the menu pages we created, so that users could add items. 
+	- We also need to tweak the mobile aspect ratio for the culinary corners website.
+
+
 
 <h2>Product Goal:</h2>
 By the end of developing our website, CulinaryCorners aims to have a one stop shop for a culinary experience, providing a diverse range of cuisines, convenient pre made meals and fresh/authentic ingredients for home cooking.
