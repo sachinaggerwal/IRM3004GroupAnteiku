@@ -25,8 +25,8 @@
 
 <h2>Screenshots:</h2>
 <p>
-    <img src="culinary_corner/shop/static/shop/readme_screenshot1.png">
-	<img src="culinary_corner/shop/static/shop/readme_screenshot2.png">
+    <img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221655339535962164/readme_screenshot1.png?ex=66135e32&is=6600e932&hm=c68fdf49b903e4048fedd295945a0864b0444e5c117735568bfadacf5a421e12&">
+	<img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221655340052123698/readme_screenshot2.png?ex=66135e32&is=6600e932&hm=2907caf16ab7c1c1b8f27a05cb224c03e3d01ca9ff51760d74aa4cba5ea7d03a&">
 	<img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221649686817931345/image.png?ex=661358ee&is=6600e3ee&hm=13d42a3d356304694ec975cc2f85829ea4c388bcf00ab7133b97a1b35e6cd4de&">
 	<img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221649951608541254/image.png?ex=6613592d&is=6600e42d&hm=589264a257fcdf71d6d1d6bb5308de5d0eb371c16a5d824d8d316a2d6bb5f7ee&">
 </p>
