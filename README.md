@@ -27,8 +27,8 @@
 <p>
     <img src="culinary_corner/shop/static/shop/readme_screenshot1.png">
 	<img src="culinary_corner/shop/static/shop/readme_screenshot2.png">
-	<img src="culinary_corner/shop/static/shop/culinarycorner2readmefile_1.png">
-	<img src="culinary_corner/shop/static/shop/culinarycorner2readmefile_2.png">
+	<img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221649686817931345/image.png?ex=661358ee&is=6600e3ee&hm=13d42a3d356304694ec975cc2f85829ea4c388bcf00ab7133b97a1b35e6cd4de&">
+	<img src="https://cdn.discordapp.com/attachments/1198348260557996135/1221649951608541254/image.png?ex=6613592d&is=6600e42d&hm=589264a257fcdf71d6d1d6bb5308de5d0eb371c16a5d824d8d316a2d6bb5f7ee&">
 </p>
 
 <h2>Completed features in sprint 1</h2>
